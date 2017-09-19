@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/hamming-distance/description/
 
+// O(logN)
 int countOne(int x) {
   int count = 0;
   while (x > 0) {
