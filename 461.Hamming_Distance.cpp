@@ -1,19 +1,4 @@
 // https://leetcode.com/problems/hamming-distance/description/
-// Input: x = 1, y = 4
-
-// Output: 2
-
-// Explanation:
-// 1   (0 0 0 1)
-// 4   (0 1 0 0)
-//        ↑   ↑
-
-// The above arrows point to positions where the corresponding bits are
-// different.
-
-// 5 -> 0101 -> 2
-// 6 -> 0110 -> 2
-// 7 -> 0111 -> 3
 
 int countOne(int x) {
   int count = 0;
