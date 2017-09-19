@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/judge-route-circle/description/
 
 class Solution {
-public:
+ public:
   // O(nlogn)
   bool judgeCircle(string moves) {
     map<char, int> countMap;
@@ -18,21 +18,29 @@ public:
 };
 
 // class Solution {
-// public:
-//     bool judgeCircle(string moves) {
-//         int up=0;
-//         int left=0;
-//         for(char c:moves){
-//             switch(c){
-//                 case 'U':++up;break;
-//                 case 'D':--up;break;
-//                 case 'L':++left;break;
-//                 case 'R':--left;break;
-//             }
-//         }
-//         if(!up&&!left){
-//             return true;
-//         }
-//         return false;
+//  public:
+//   bool judgeCircle(string moves) {
+//     int up = 0;
+//     int left = 0;
+//     for (char c : moves) {
+//       switch (c) {
+//         case 'U':
+//           ++up;
+//           break;
+//         case 'D':
+//           --up;
+//           break;
+//         case 'L':
+//           ++left;
+//           break;
+//         case 'R':
+//           --left;
+//           break;
+//       }
 //     }
+//     if (!up && !left) {
+//       return true;
+//     }
+//     return false;
+//   }
 // };
