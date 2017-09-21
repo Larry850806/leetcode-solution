@@ -1,4 +1,4 @@
-// package main
+package main
 
 // func filter(vs []string, f func(string) bool) []string {
 // 	var vsf []string
