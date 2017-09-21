@@ -17,3 +17,19 @@ func distributeCandies(candies []int) int {
 	}
 	return min(len(m), len(candies)/2)
 }
+
+// func distributeCandies(candies []int) int {
+// 	arr := [200001]bool{false}
+// 	k := 0
+// 	for _, v := range candies {
+// 		if !arr[100000+v] {
+// 			k++
+// 			arr[100000+v] = true
+// 		}
+// 		if k == len(candies)/2 {
+// 			return k
+// 		}
+// 	}
+
+// 	return k
+// }
