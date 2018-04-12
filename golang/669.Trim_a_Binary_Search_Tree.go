@@ -2,13 +2,6 @@
 
 package main
 
-// TreeNode is definition for a binary tree node
-// type TreeNode struct {
-// 	Val   int
-// 	Left  *TreeNode
-// 	Right *TreeNode
-// }
-
 // root, Left, Right can be nil
 func trimBST(root *TreeNode, L int, R int) *TreeNode {
 	if root == nil {
