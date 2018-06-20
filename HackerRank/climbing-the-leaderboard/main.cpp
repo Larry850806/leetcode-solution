@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <algorithm>
+#include <climits>
 #include <iterator>
 #include <map>
 
@@ -6,22 +8,60 @@ using namespace std;
 
 vector<string> split_string(string);
 
+// O(n)
+void rm_dup(vector<int> &vec) {
+  auto it = unique(vec.begin(), vec.end());
+  vec.resize(distance(vec.begin(), it));
+}
+
+void print(vector<int> &vec) {
+  for (auto it = vec.begin(); it != vec.end(); it++) {
+    cout << *it << " ";
+  }
+  cout << endl;
+}
+
 // Complete the climbingLeaderboard function below.
 vector<int> climbingLeaderboard(vector<int> scores, vector<int> alice) {
+  rm_dup(scores);
+  reverse(scores.begin(), scores.end());
+  scores.insert(scores.begin(), INT_MIN);
+  scores.push_back(INT_MAX);
+
+  print(scores);
+  print(alice);
+
+  // scores = [INT_MIN 10 20 40 50 100 INT_MAX]
+  // alice  = [5 5 25 50 120]
+
   vector<int> ranks;
-  map<int, int> m_scores;
+  auto scores_it = scores.begin();
+  auto alice_it = alice.begin();
 
-  for (auto it = scores.begin(); it != scores.end(); it++) {
-    int value = *it;
-    m_scores[value] = value;
-  }
-  cout << m_scores.size() << endl;
+  while (alice_it != alice.end()) {
+    int score = *scores_it;
+    int alice_score = *alice_it;
 
-  for (auto it = alice.begin(); it != alice.end(); it++) {
-    int score = *it;
-    auto up_it = m_scores.upper_bound(score);
-    int rank = m_scores.size() - distance(m_scores.begin(), up_it) + 1;
-    ranks.push_back(rank);
+    cout << score << " " << alice_score << endl;
+
+    if (alice_score == score) {
+      int rank = distance(scores_it, scores.end()) - 1;
+      ranks.push_back(rank);
+      alice_it++;
+      continue;
+    }
+
+    if (alice_score > score) {
+      scores_it++;
+      continue;
+    }
+
+    if (alice_score < score) {
+      int rank = distance(scores_it, scores.end());
+      ranks.push_back(rank);
+      alice_it++;
+      continue;
+    }
   }
 
   return ranks;
