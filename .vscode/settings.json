@@ -24,6 +24,10 @@
         "unordered_set": "cpp",
         "vector": "cpp",
         "iosfwd": "cpp",
-        "__string": "cpp"
+        "__string": "cpp",
+        "iostream": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "ios": "cpp"
     }
 }
