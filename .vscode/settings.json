@@ -28,6 +28,7 @@
         "iostream": "cpp",
         "random": "cpp",
         "limits": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "valarray": "cpp"
     }
 }
